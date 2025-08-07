@@ -4,11 +4,11 @@ import random
 class InventoryEnvironment:
     def __init__(self):
         self.products = ['product_A', 'product_B']
-        self.max_stock = 10
+        self.max_stock = 5
         self.demand = {'product_A': [0, 1, 2], 'product_B': [0, 1, 2]}
         self.restock_cost = {'product_A': 5, 'product_B': 7}
         self.sell_price = {'product_A': 10, 'product_B': 15}
-        self.state = None
+        self.state = 0
 
     def reset(self):
         self.state = {product: random.randint(0, self.max_stock) for product in self.products}
